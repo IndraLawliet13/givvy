@@ -1,36 +1,40 @@
 # givvy
 
-Automation scripts for the Givvy-style scratch-card reward workflow, preserved as a safe public showcase from a private working setup.
+![Python](https://img.shields.io/badge/Python-Automation-3776AB?logo=python&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-Variant-777BB4?logo=php&logoColor=white)
+![Target](https://img.shields.io/badge/Target-Givvy%20Reward%20Flow-111827)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+
+Automation scripts for a Givvy-style scratch-card reward workflow, preserved as a safe public showcase from a private working setup.
 
 This public candidate intentionally keeps only the reusable code variants while excluding live encrypted account blobs, cookie jars, and duplicate deployment folders.
 
-## What is included
+## Highlights
+
+- Python and PHP implementations of the same workflow idea
+- local config-driven account and APK metadata model
+- encrypted mobile-state handling inside the automation flow
+- public template packaging without live cookies or runtime blobs
+
+## Included files
 
 - `multiAcc.py` - Python implementation
 - `multiAcc.php` - PHP implementation
 - `config.example.json` - safe example config shape
-- `requirements.txt` - minimal Python dependencies
+- `requirements.txt`
 - `LICENSE`
 
-## What is intentionally excluded
+## Local-only files
+
+The public repo intentionally excludes:
 
 - real `config.json`
 - real `cookie.txt`
 - `cf.json`, `cf2.json`, `cf3.json`
-- archived duplicate bundle `reff.zip`
-- duplicated private folders used only for deployment variants
+- `reff.zip`
+- the duplicate deployment folders from the original private layout
 
-## Project shape
-
-The code is built around the same pattern in both implementations:
-
-1. load account blobs and APK metadata from `config.json`
-2. decrypt stored mobile-app state fields
-3. construct Givvy API headers and device identifiers
-4. run per-account reward actions in parallel
-5. persist only local runtime state when needed
-
-## Setup
+## Quick start
 
 ### Python path
 ```bash
@@ -45,23 +49,27 @@ cp config.example.json config.json
 php multiAcc.php
 ```
 
-## Config format
+## Config structure
 
-`config.json` contains two arrays:
+`config.json` contains two main arrays:
 
 - `accounts`
-  - `datalogin`
-  - `foreground`
+  - encrypted `datalogin`
+  - encrypted `foreground`
 - `apks`
-  - `url`
+  - app `url`
   - `packageName`
   - `version`
 
-Use `config.example.json` as the template only. Do not commit live values.
+Use `config.example.json` as the template only.
+
+## Documentation
+
+- `docs/CONFIG_FORMAT.md`
 
 ## Security notes
 
-- Treat `config.json` as sensitive because it contains encrypted but live account/session-derived material.
+- Treat `config.json` as sensitive because it contains encrypted but still live account/session-derived material.
 - Treat `cookie.txt` as sensitive runtime state.
 - Keep per-account deployment variants separate from the public showcase repo.
 
