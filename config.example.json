@@ -1,0 +1,15 @@
+{
+  "accounts": [
+    {
+      "datalogin": "replace-with-encrypted-datalogin",
+      "foreground": "replace-with-encrypted-foreground"
+    }
+  ],
+  "apks": [
+    {
+      "url": "givvy-scratch-card-new.herokuapp.com",
+      "packageName": "com.appearnings.luckyscratchcard",
+      "version": "5.1"
+    }
+  ]
+}

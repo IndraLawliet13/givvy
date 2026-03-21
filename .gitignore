@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+
+# local sensitive/runtime files
+config.json
+cookie.txt
+cf.json
+cf2.json
+cf3.json
+.env
+
+# editor
+.vscode/
+.idea/
+.DS_Store
