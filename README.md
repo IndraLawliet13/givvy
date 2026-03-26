@@ -1,5 +1,6 @@
 # givvy
 
+![CI](https://img.shields.io/github/actions/workflow/status/IndraLawliet13/givvy/ci.yml?branch=main&label=CI)
 ![Python](https://img.shields.io/badge/Python-Automation-3776AB?logo=python&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-Variant-777BB4?logo=php&logoColor=white)
 ![Target](https://img.shields.io/badge/Target-Givvy%20Reward%20Flow-111827)
@@ -16,12 +17,22 @@ This public candidate intentionally keeps only the reusable code variants while 
 - encrypted mobile-state handling inside the automation flow
 - public template packaging without live cookies or runtime blobs
 
+## Tech stack
+
+- Python 3
+- PHP 8
+- Requests-style HTTP automation
+- AES-based local data handling in the Python variant
+
 ## Included files
 
 - `multiAcc.py` - Python implementation
 - `multiAcc.php` - PHP implementation
 - `config.example.json` - safe example config shape
 - `requirements.txt`
+- `docs/CONFIG_FORMAT.md`
+- `docs/QUICKSTART.md`
+- `.github/workflows/ci.yml`
 - `LICENSE`
 
 ## Local-only files
@@ -38,6 +49,8 @@ The public repo intentionally excludes:
 
 ### Python path
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 cp config.example.json config.json
 python3 multiAcc.py
@@ -66,6 +79,13 @@ Use `config.example.json` as the template only.
 ## Documentation
 
 - `docs/CONFIG_FORMAT.md`
+- `docs/QUICKSTART.md`
+
+## Compatibility
+
+- Python 3.10+
+- PHP 8.1+
+- Linux/macOS shells recommended for the copy-paste flow above
 
 ## Security notes
 
